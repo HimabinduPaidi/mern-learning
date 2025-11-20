@@ -1,9 +1,9 @@
 function findStudent(students, studentId) {
-  // TODO
+  return students.find((s) => s.id === studentId) || null;
 }
 
 function findCourse(courses, courseId) {
-  // TODO
+  return courses.find((c) => c.id === courseId) || null;
 }
 
 // ----- rules -----
