@@ -66,11 +66,11 @@ async function deleteTask($idToBeDeleted) {
     });
 console.log(result);
     
-        const listItemToBeRemoved = document.getElementById($idToBeDeleted);
-        if(listItemToBeRemoved) listItemToBeRemoved.remove();
+        const listItemToBeRemoved = document.getElementById($idToBeDeleted);// Select the list item to be removed from the UI
+        if(listItemToBeRemoved) listItemToBeRemoved.remove();// Remove the list item from the UI
         // Check if the todo list is empty after deletion
         const listItems = document.querySelectorAll(".taskContainer")
-        // console.log(listItems);
+       
         if (!listItems.length) {
             todoList.innerHTML = "<p>No todos. Please add some tasks.</p>";
             isTodoListEmpty = true;
@@ -91,11 +91,11 @@ async function toggleTask($idTobeToggled) {
     });
     console.log(updatedTask);
 }
-//Create UI for a single task object
+// Function to create a new list item element for a task
 function createListItem(taskObject) {
     const newListItem = document.createElement("li"); // <li></li>
-    newListItem.setAttribute("class", "taskContainer")
-    newListItem.setAttribute("id", taskObject.$id)
+    newListItem.setAttribute("class", "taskContainer")// <li class="taskContainer"></li>
+    newListItem.setAttribute("id", taskObject.$id)// <li id="unique-task-id"></li>
 
     // Checkbox
     const isTaskDoneCheckBox = document.createElement('input');
