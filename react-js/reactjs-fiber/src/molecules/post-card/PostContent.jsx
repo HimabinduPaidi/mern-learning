@@ -2,7 +2,7 @@ import PostImage from "../../assets/img.png";
 import IconButton from "../../atoms/IconButton";
 import { User } from 'lucide-react';
 
-const PostCotent = () => {
+const PostContent = () => {
   return (
     <div className="relative w-full h-[500px] bg-amber-300">
       <img src={PostImage} alt="Post Image" className="object-cover h-full w-full" />
@@ -13,4 +13,4 @@ const PostCotent = () => {
   )
 }
 
-export default PostCotent
+export default PostContent;
