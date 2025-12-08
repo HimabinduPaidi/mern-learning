@@ -49,6 +49,9 @@ app.get("/",(request,response)=> {                                              
     console.log(path.join(__dirname, "public","index.html"))                                                                //checking the path
     response.sendFile(path.join(__dirname, "public","index.html"))                                                            //serving index.html file
 });
+app.delete("/api/v1/todos/:taskId", (req, res)=>{                                                                        //route to delete a task
+    const {taskIdToDelete} = req.params;
+});    
 app.listen(PORT , function() {                                                                                              //starting the server
     console.log("Server is running at port:", PORT);                                                                        //listening on port 3000
 

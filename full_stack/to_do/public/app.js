@@ -57,13 +57,20 @@ async function deleteTask(taskId){                                              
     }); 
     const data = await response.json();                                                                   //converting ReadableStream to JSON
 }
+async function toggleTask(taskObject){
+    const response = await fetch(`${BaseURL}/api/v1/todos/${taskObject.taskId}`,{})                         //toggle task api call
+    const data = await response.json();  
+    console.log(data);                                                                 //converting ReadableStream to JSON
+}
+    
+
 function createListItem(taskObject){                                                                      //function to create a list item
     const newListItem = document.createElement("li"); //<li></li>                                                        //create li element
     newListItem.textContent = taskObject.taskText;    //<li>Go to Market</li>                                                         //set id attribute
    
     const isTaskDoneCheckbox = document.createElement("input");                                             //create checkbox element
     isTaskDoneCheckbox.setAttribute("type", "checkbox");                                                         //set type attribute
-    isTaskDoneCheckbox.addEventListener("change",);                                               //event listener for checkbox change
+    isTaskDoneCheckbox.addEventListener("change",() => toggleTask(taskObject))                                            //event listener for checkbox change
 
     const p = document.createElement("p");                                                                       //create p element
     p.setAttribute("id","taskContent")                                                                            //set id attribute
